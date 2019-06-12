@@ -18,10 +18,11 @@ public:
 
 public:
     Error load(const QString& mapFileName);
+    MapLevel getLevel(int levelNum) const;
     Map* map() const;
 
 protected:
-    QString  m_mapFleName;
+    QString  m_mapFileName;
     Map*     m_map;
 
 

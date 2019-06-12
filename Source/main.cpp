@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include "MainDialog.h"
 #include <QApplication>
 #include <QMessageBox>
 
@@ -7,6 +7,8 @@
 
 int main(int argc, char *argv[])
 {
+    using namespace Sokoban;
+
     QApplication a(argc, argv);
     MainWindow w;
     MapWidget mw;

@@ -2,6 +2,9 @@
 #include <QPaintEvent>
 #include <QPainter>
 
+namespace Sokoban {
+;
+
 MapWidget::MapWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -16,3 +19,5 @@ void MapWidget::paintEvent(QPaintEvent *event)
 
     painter.drawText(0,0, "Hello");
 }
+
+} // end of namespace Sokoban

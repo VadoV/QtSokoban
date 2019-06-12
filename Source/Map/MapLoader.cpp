@@ -1,8 +1,9 @@
-
 #include <QString>
 #include <QFile>
 #include <QTextStream>
 #include <QVector>
+
+#include "MapItems/NulledMapItem.h"
 
 #include "MapLoader.h"
 #include "MapItems/MapItemBase.h"
@@ -17,7 +18,7 @@ MapLoader::MapLoader()
 }
 
 MapLoader::MapLoader(const QString& mapFileName)
-    : m_mapFleName(mapFileName)
+    : m_mapFileName(mapFileName)
     , m_map(nullptr)
 {
 
@@ -47,15 +48,15 @@ static const QString c_version_magic_string = "sokoban_game_map";
 
 MapItemBase* mapItemTypeToMapItem(MapItemType mit)
 {
-    switch (mit)
-    {
-    case MapItemType::Box:    return new BoxMapItem();    break;
-    case MapItemType::Floor:  return new FloorMapItem();  break;
-    case MapItemType::Wall:   return new WallMapItem();   break;
-    case MapItemType::Stock:  return new StockMapItem();  break;
-    case MapItemType::Player: return new PlayerMapItem(); break;
-    case MapItemType::None:   return new NoneMapItem();   break;
-    }
+//    switch (mit)
+//    {
+//    case MapItemType::Box:    return new BoxMapItem();    break;
+//    case MapItemType::Floor:  return new FloorMapItem();  break;
+//    case MapItemType::Wall:   return new WallMapItem();   break;
+//    case MapItemType::Stock:  return new StockMapItem();  break;
+//    case MapItemType::Player: return new PlayerMapItem(); break;
+//    case MapItemType::None:   return new NoneMapItem();   break;
+//    }
 
     return new NulledMapItem;
 }
@@ -140,7 +141,7 @@ Error MapLoader::checkMapFileStructure(const QString &mapFileName)
 
     while (!ts.atEnd())
     {
-        QVector<MapItemBase*> mapLine = //mapItemTypeToMapItem(..);
+        //QVector<MapItemBase*> mapLine = //mapItemTypeToMapItem(..);
     }
 
     return result;

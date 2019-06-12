@@ -3,6 +3,19 @@
 
 #include <QWidget>
 
+namespace Sokoban {
+;
+
+//*********************************************************
+// Forward declaration
+//*********************************************************
+class Map;
+
+
+//*********************************************************
+// Implements
+//*********************************************************
+
 class MapWidget : public QWidget
 {
     Q_OBJECT
@@ -15,7 +28,12 @@ public slots:
 
     // QWidget interface
 protected:
-    void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override;
+
+    Map* m_map;
+
 };
+
+} // end of namespace Sokoban
 
 #endif // MAPWIDGET_H

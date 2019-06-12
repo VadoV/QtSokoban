@@ -25,8 +25,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    MainDialog.cpp \
     main.cpp \
-    MainWindow.cpp \
     Map\Map.cpp \
     Map\MapWidget.cpp \
     Map\MapLoader.cpp \
@@ -35,7 +35,7 @@ SOURCES += \
 
 HEADERS += \
     Error.h \
-    MainWindow.h \
+    MainDialog.h \
     Map\Map.h \
     Map\MapLoader.h \
     Map\MapSaver.h \

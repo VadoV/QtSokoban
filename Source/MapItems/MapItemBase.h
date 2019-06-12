@@ -49,22 +49,31 @@ public:
     //
     // Return position throught QPoint
     //
-    virtual const QPoint position() const = 0;
+    virtual QPoint position() const
+    {
+        return m_position;
+    }
 
     //
     // Set position by x and y coordinates
     //
-    virtual       void   setPosition(int x, int y)        = 0;
+    inline constexpr void setPosition(int x, int y)
+    {
+        setPosition(QPoint(x, y));
+    }
 
     //
     // Set position by QPoint
     //
-    virtual       void   setPosition(QPoint newPosition)  = 0;
+    virtual void setPosition(const QPoint& newPosition)
+    {
+
+    }
 
     //
     //  Move Item to required position
     //
-    virtual       void   move(int dx, int dy)             = 0;
+    virtual void move(int dx, int dy) = 0;
 
 /* Move check's methods */
     //
@@ -77,12 +86,12 @@ public:
     //
     // Make item visible
     //
-    virtual void show()      = 0;
+    virtual void show() = 0;
 
     //
     // Make item invisible
     //
-    virtual void hide()      = 0;
+    virtual void hide() = 0;
 
     //
     // Check whether the item is visible
@@ -94,6 +103,11 @@ public:
     // Draw level items
     //
     virtual void draw(QPainter* const painter) const = 0;
+
+/* Fields */
+protected:
+    QPoint m_position;
+
 };
 
 } // end of namespace Sokoban

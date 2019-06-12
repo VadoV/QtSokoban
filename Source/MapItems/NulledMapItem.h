@@ -15,18 +15,18 @@ public:
 
     // MapItemBase interface
 public:
-    MapItemType  itemType() const override;
-    const Map    *map() const override;
-    void         setMap(Map *newMap) override;
-    const QPoint position() const override;
-    void         setPosition(int x, int y) override;
-    void         setPosition(QPoint newPosition) override;
-    void         move(int dx, int dy) override;
-    bool         isMoveable() const override;
-    void         show() override;
-    void         hide() override;
-    bool         isVisible() override;
-    void         draw(QPainter * const painter) const override;
+    virtual MapItemType  itemType() const override;
+    virtual const Map    *map() const override;
+    virtual void         setMap(Map *newMap) override;
+    virtual const QPoint position() const override;
+    virtual void         setPosition(int x, int y) override;
+    virtual void         setPosition(QPoint newPosition) override;
+    virtual void         move(int dx, int dy) override;
+    virtual bool         isMoveable() const override;
+    virtual void         show() override;
+    virtual void         hide() override;
+    virtual bool         isVisible() override;
+    virtual void         draw(QPainter * const painter) const override;
 };
 
 } // end of namespace Sokoban
